@@ -1,0 +1,399 @@
+.title {
+  font-family: Roboto, 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.button {
+  padding: 8px 30px 12px;
+  color: #fff;
+  background-color: #272A33;
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 1.45;
+  transition: all .2s ease-in;
+}
+
+.button:hover {
+  background-color: #EE753E;
+}
+
+.button:disabled {
+  background-color: #D4D4D6;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+}
+
+.header__logo {
+  display: flex;
+  gap: 10px;
+}
+
+.header__nav-check {
+  display: none;
+}
+
+.header__nav-btn {
+  display: none;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 80px;
+}
+
+.header__nav-link {
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all .1s ease-in;
+}
+
+.header__nav-link:hover {
+  color: #EE753E;
+}
+
+/* RECOMMENDED */
+
+.recommended {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.recommended__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.recommended__cards-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  border: 1px solid #E0E6ED;
+  border-radius: 8px;
+}
+
+.recommended__card-image {
+  background-color: #EEF3F8;
+  width: 220px;
+  height: max(220px, 100%);
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.recommended__card-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;  
+  padding: 31px 30px;
+}
+
+.recommended__card-title {
+  font-weight: normal;
+  font-family: Roboto, 'Open Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: auto;
+}
+
+.recommended__card-text {
+  font-size: 16px;
+  line-height: 1.45;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+} 
+
+.recommended__card-text::before {
+  content: url(../images/check.svg);
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.recommended__card-text_order::before {
+  content: url(../images/check_order.svg);
+}
+
+.recommended__btn {
+  align-self: center;
+}
+
+/* ABOUT US */
+
+.about-us__title {
+  margin-bottom: 30px;
+}
+
+.about-us__main {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.about-us__gallery {
+  width: 50%;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.about-us__img-wrapper {
+  position: relative;
+  max-width: max(337px, 50%);
+  flex-grow: 1;
+}
+
+.about-us__img-wrapper::before {
+  display: block;
+  content: '';
+  width: 100%;
+  padding-top: 48%;
+}
+
+.about-us__img-wrapper:first-child {
+  max-width: 100%;
+  width: 100%;
+}
+
+.about-us__img-wrapper:first-child::before {
+  padding-top: 28.6%;
+}
+
+.about-us__img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  vertical-align: middle;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-us__img_size_l {
+  border-radius: 20px;
+}
+
+.about-us__info {
+  width: 50%;
+  flex-grow: 1;
+}
+
+.about-us__text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.about-us__text_bold {
+  font-weight: bold;
+}
+
+.about-us__advantages {
+  margin: 20px 0;
+}
+
+.about-us__advantage {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.about-us__advantage::before {
+  content: url(../images/advantage_check.svg);
+}
+
+.about-us__advantage + .about-us__advantage {
+  margin-top: 20px;
+}
+
+.about-us__btn {
+  margin-top: 30px;
+}
+
+/* ADAPTIVE */
+
+@media (max-width: 1439px) {
+
+  .header {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__nav-btn {
+    display: block;
+    background-image: url(../images/burger-menu.svg);
+    background-size: 23px 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #272A33;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .header__nav-check:checked ~ .header__nav-btn {
+    background-image: url(../images/burger-menu-cross.svg);
+  }
+
+  .header__nav-check:checked ~ .header__nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    padding: 10px 0 50px;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+  }
+
+  .header__nav::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: calc(45% - 50vw);
+    width: 100vw;
+    height: 1px;
+    background-color: #EAEFF4;
+  }
+
+  .header__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .header__nav-item {
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .header__nav-item::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #EAEFF4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 1160px) {
+
+  .title {
+    font-size: 30px;
+  }
+
+  .recommended__cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .recommended__card-info {
+    max-width: 345px;
+  }
+
+  .about-us__main {
+    flex-direction: column;
+  }
+
+  .about-us__gallery {
+    width: 100%;
+  }
+
+  .about-us__info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 576px) {
+
+  .header__nav-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .recommended__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .recommended__cards-item {
+    display: none;
+  }
+
+  .recommended__cards-item:nth-child(-n+4) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: min(170px, 50%);
+  }
+
+  .recommended__card-image {
+    height: 170px;
+    width: 100%;
+  }
+
+  .recommended__card-info {
+    padding: 10px;
+  }
+
+  .recommended__card-title {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .recommended__card-text {
+    font-size: 14px;
+  }
+
+  .recommended__card-btn {
+    font-size: 16px;
+  }
+
+  .about-us__title {
+    margin-bottom: 20px;
+  }
+
+  .about-us__main {
+    gap: 20px;
+  }
+
+  .about-us__gallery {
+    gap: 15px;
+    grid-template-rows: 103px 82px;
+  }
+
+  .about-us__btn {
+    margin-top: 20px;
+  }
+}

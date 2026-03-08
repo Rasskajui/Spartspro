@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: min(80.6%, 1440px);
+  margin: 0 auto;
+  font-family: 'Open Sans', Roboto, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  margin: 80px auto;
+}
+
+@media (max-width: 1160px) {
+  body {
+    max-width: min(75%, 768px);
+  }
+
+  section {
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    max-width: 360px;
+  }
+
+}
